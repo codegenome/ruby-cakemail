@@ -17,7 +17,7 @@ module CakeMail
       end
 
       begin
-        cake_mail_send mail
+        CakeMail::CakeMailSend.send_email mail
       rescue Exception => e
         raise e if defined?(raise_delivery_errors) && raise_delivery_errors
       end

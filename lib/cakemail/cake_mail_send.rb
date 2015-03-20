@@ -1,7 +1,8 @@
 module CakeMail
   module CakeMailSend
 
-    def cake_mail_send mail
+    def self.send_email mail
+
       options = {
         :sender_name => mail.from.first,
         :sender_email => mail.reply_to.first,
