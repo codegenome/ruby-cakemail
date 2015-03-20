@@ -3,6 +3,9 @@
 Use CakeMail service with Rails ActionMailer
 http://cakemail.com
 
+Modified version of Ruby-CakeMail:
+https://rubygems.org/gems/lpgauth-ruby-cakemail
+
 ## Installation
 
 Add this line to your application's Gemfile:
