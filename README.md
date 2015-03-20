@@ -24,7 +24,7 @@ Or install it yourself as:
 
 ## Usage
 
-```
+```ruby
 CAKEMAIL_SETTINGS = {
   :interface_key => INTERFACE_KEY,
   :interface_id => INTERFACE_ID,
