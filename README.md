@@ -1,6 +1,7 @@
 # Ruby::Cakemail
 
-TODO: Write a gem description
+Use CakeMail service with Rails ActionMailer
+http://cakemail.com
 
 ## Installation
 
