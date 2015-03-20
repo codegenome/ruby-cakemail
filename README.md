@@ -32,10 +32,6 @@ CAKEMAIL_SETTINGS = {
   :password => PASSWORD
 }
 
-ActiveSupport.on_load :action_mailer do
-  ActionMailer::Base.add_delivery_method :cake_mail, CakeMail::Delivery
-end
-
 ActionMailer::Base.delivery_method = :cake_mail
 ```
 
