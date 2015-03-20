@@ -22,3 +22,5 @@ require 'cakemail/template'
 require 'cakemail/trigger'
 require 'cakemail/user'
 require 'cakemail/delivery'
+
+require "cakemail/railtie" if defined? Rails
