@@ -7,29 +7,23 @@ module CakeMail
       @settings = options
     end
 
-    def deliver mail
-      deliver! mail
-    end
-
     def deliver! mail
 
-      options = {
-        :sender_name => mail.from.first,
-        :sender_email => mail.reply_to.first,
-        :subject => mail.subject,
-        :text_message => mail.body
-      }
+      raise "no mail object available for delivery!" unless mail
 
-      options.merge!(:text_message => mail.body) if mail.content_type =~ /plain/
-      options.merge!(:html_message => mail.body) if mail.content_type =~ /html/
-
-      session = CakeMail::Session.new(CAKEMAIL_SETTINGS[:interface_id], CAKEMAIL_SETTINGS[:interface_key])
-      user = session.login(CAKEMAIL_SETTINGS[:email], CAKEMAIL_SETTINGS[:password])
-
-      mail.destinations.each do |destination|
-        options.merge!(:email => destination)
-        CakeMail::Relay.send(options.merge(:user => user))
+      if defined? logger
+        logger.info  "Sent mail to #{Array(mail.destinations).join(', ')}"
+        logger.debug "\n#{mail.encoded}"
       end
+
+      begin
+        cake_mail_send mail
+      rescue Exception => e
+        raise e if defined?(raise_delivery_errors) && raise_delivery_errors
+      end
+
+      return mail
+
     end
 
   end
