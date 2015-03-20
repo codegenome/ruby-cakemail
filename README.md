@@ -20,7 +20,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+CAKEMAIL_SETTINGS = {
+  :interface_key => INTERFACE_KEY,
+  :interface_id => INTERFACE_ID,
+  :email => EMAIL,
+  :password => PASSWORD
+}
+
+ActiveSupport.on_load :action_mailer do
+  ActionMailer::Base.add_delivery_method :cake_mail, CakeMail::Delivery
+end
+
+ActionMailer::Base.delivery_method = :cake_mail
+```
 
 ## Contributing
 
