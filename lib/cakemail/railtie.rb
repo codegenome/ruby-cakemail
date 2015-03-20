@@ -1,4 +1,4 @@
-module LetterOpener
+module CakeMail
   class Railtie < Rails::Railtie
     initializer "ruby_cakemail.add_delivery_method" do
       ActiveSupport.on_load :action_mailer do
