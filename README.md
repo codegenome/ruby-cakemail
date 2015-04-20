@@ -11,7 +11,7 @@ https://rubygems.org/gems/lpgauth-ruby-cakemail
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ruby-cakemail'
+gem 'ruby-cakemail', github: 'codegenome/ruby-cakemail'
 ```
 
 And then execute:
@@ -37,7 +37,7 @@ ActionMailer::Base.delivery_method = :cake_mail
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/ruby-cakemail/fork )
+1. Fork it ( https://github.com/codegenome/ruby-cakemail/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
